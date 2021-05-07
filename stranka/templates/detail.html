@@ -1,0 +1,14 @@
+{% extends 'stranka.html' %}
+
+{% block title %}Úvodní stránka{% endblock %}
+
+{% block content %}
+    <div id="detail">
+        <h2>{{stroj.nazev}}</h2>
+        <p class="text">{{stroj.popis}}</p>
+        <p class="text">Cena: {{stroj.cena}}Kč</p>
+        <p class="text">Kategorie: {{stroj.druh.kategorie}}</p>
+        <p class="text">Stav: {% for star in "x"|ljust:stroj.stav %}<i class="fa fa-star"></i>{% endfor %}</p>
+        <p class="text"><img src="{{stroj.foto.url}}"></p>
+    </div>
+{% endblock %}

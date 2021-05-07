@@ -1,0 +1,11 @@
+{% extends 'stranka.html' %}
+
+{% block title %}Úvodní stránka{% endblock %}
+
+{% block content %}
+    {% for stroj in stroje_list %}
+          <div id="vypis">
+          <h4 class="card-title"><a href="{%url 'detail' stroj.pk%}">{{ stroj.nazev }}</a> </h4>
+          </div>
+    {% endfor %}
+{% endblock %}
